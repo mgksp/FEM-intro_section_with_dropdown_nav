@@ -1,5 +1,12 @@
+import { Header, Hero } from "./components";
+
 function App() {
-  return <div className="bg-almostWhite"></div>;
+  return (
+    <>
+      <Header />
+      <Hero />
+    </>
+  );
 }
 
 export default App;

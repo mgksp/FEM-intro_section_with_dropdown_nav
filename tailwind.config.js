@@ -10,6 +10,18 @@ module.exports = {
         mediumGray: "hsl(0, 0%, 41%)",
         almostBlack: "hsl(0, 0%, 8%)",
       },
+      borderWidth: {
+        1: "1px",
+      },
+      boxShadow: {
+        nav: "0 10px 50px 0px rgba(0, 0, 0, 0.1)",
+      },
+      gridTemplateRows: {
+        heroDescLayout: "minmax(0, 1fr) min-content",
+      },
+      gridTemplateColumns: {
+        mobNavLayout: "1fr 3fr",
+      },
     },
   },
   plugins: [],
