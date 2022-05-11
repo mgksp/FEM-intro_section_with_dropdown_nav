@@ -1,18 +1,9 @@
 import { useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 
 import logo from "../images/logo.svg";
 
 import iconMenu from "../images/icon-menu.svg";
-import iconClose from "../images/icon-close-menu.svg";
-
-import iconArrUp from "../images/icon-arrow-up.svg";
-import iconArrDown from "../images/icon-arrow-down.svg";
-
-import iconTodo from "../images/icon-todo.svg";
-import iconPlanning from "../images/icon-planning.svg";
-import iconReminders from "../images/icon-reminders.svg";
-import iconCalendar from "../images/icon-calendar.svg";
 import DesktopNav from "./DesktopNav";
 import MobileNav from "./MobileNav";
 

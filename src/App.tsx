@@ -14,7 +14,7 @@ export default App;
 
 const Footer = () => {
   return (
-    <div className="text-xs text-center w-full py-1 text-mediumGray absolute bottom-0 left-0">
+    <footer className="text-xs text-center w-full py-1 text-mediumGray absolute bottom-0 left-0">
       Challenge by&nbsp;
       <a
         className="text-sm font-bold text-almostBlack"
@@ -34,6 +34,6 @@ const Footer = () => {
         Prabu
       </a>
       .
-    </div>
+    </footer>
   );
 };
