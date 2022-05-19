@@ -11,7 +11,7 @@ export default function Header() {
   const [showMobNav, setShowMobNav] = useState(false);
 
   return (
-    <header className="flex justify-between items-center px-4 py-6 md:px-10 md:py-8 md:mb-9 md:justify-start gap-14">
+    <header className="flex justify-between items-center px-4 py-6 md:px-10 md:py-8 md:mb-9 md:justify-start gap-14 max-w-[90rem] mx-auto">
       <img src={logo} alt="" />
       <button
         aria-label="menu"
