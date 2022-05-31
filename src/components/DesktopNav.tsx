@@ -13,6 +13,35 @@ export default function DesktopNav() {
   const [showFeatures, setShowFeatures] = useState(false);
   const [showCompany, setShowCompany] = useState(false);
 
+  const ProductMenuItems = () => (
+    <ul className="flex gap-2 flex-col">
+      <li className="flex items-center gap-2 cursor-pointer hover:text-almostBlack">
+        <img className="w-4" src={iconTodo} alt="" />
+        <p>Todo&nbsp;List</p>
+      </li>
+      <li className="flex items-center gap-2 cursor-pointer hover:text-almostBlack">
+        <img className="w-4" src={iconCalendar} alt="" />
+        <p>Calendar</p>
+      </li>
+      <li className="flex items-center gap-2 cursor-pointer hover:text-almostBlack">
+        <img className="w-4" src={iconReminders} alt="" />
+        <p>Reminders</p>
+      </li>
+      <li className="flex items-center gap-2 cursor-pointer hover:text-almostBlack">
+        <img className="w-4" src={iconPlanning} alt="" />
+        <p>Planning</p>
+      </li>
+    </ul>
+  );
+
+  const CompanyMenuItems = () => (
+    <ul className="flex gap-2 flex-col">
+      <li className="cursor-pointer hover:text-almostBlack">History</li>
+      <li className="cursor-pointer hover:text-almostBlack">Our Team</li>
+      <li className="cursor-pointer hover:text-almostBlack">Blog</li>
+    </ul>
+  );
+
   return (
     <nav
       aria-label="desktop-navigation"
@@ -21,11 +50,15 @@ export default function DesktopNav() {
       <div className="flex gap-8">
         <DropDownMenu
           title="Features"
+          menuItems={<ProductMenuItems />}
+          width="w-40"
           navMenuState={showFeatures}
           setNavMenuState={setShowFeatures}
         />
         <DropDownMenu
           title="Company"
+          menuItems={<CompanyMenuItems />}
+          width="w-32"
           navMenuState={showCompany}
           setNavMenuState={setShowCompany}
         />
@@ -48,11 +81,15 @@ export default function DesktopNav() {
 
 interface DropDownMenuProps {
   title: string;
+  menuItems: React.ReactNode;
+  width: string;
   navMenuState: boolean;
   setNavMenuState: React.Dispatch<SetStateAction<boolean>>;
 }
 const DropDownMenu = ({
   title,
+  menuItems,
+  width,
   navMenuState,
   setNavMenuState,
 }: DropDownMenuProps) => {
@@ -101,13 +138,9 @@ const DropDownMenu = ({
         <motion.div
           initial={{ y: "-20rem" }}
           animate={{ y: navMenuState ? 0 : "-20rem" }}
-          className="absolute bg-white rounded-xl shadow-nav p-6 top-4 left-0 w-32"
+          className={`absolute bg-white rounded-xl shadow-nav p-6 top-4 left-0 ${width}`}
         >
-          <ul className="flex gap-2 flex-col">
-            <li className="cursor-pointer hover:text-almostBlack">History</li>
-            <li className="cursor-pointer hover:text-almostBlack">Our Team</li>
-            <li className="cursor-pointer hover:text-almostBlack">Blog</li>
-          </ul>
+          {menuItems}
         </motion.div>
       </div>
     </div>
